@@ -55,7 +55,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         lblNomeCliente = new javax.swing.JLabel();
         lblSexoCliente = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela de Relatorios");
         getContentPane().setLayout(null);
 
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -69,7 +69,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblClientes);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 70, 910, 320);
+        jScrollPane1.setBounds(0, 70, 920, 320);
 
         lblTipoRelatorio.setText("Tipo de Relatório");
         getContentPane().add(lblTipoRelatorio);
@@ -111,7 +111,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
 
         lblSexoCliente.setText("Digite o sexo desejado");
         getContentPane().add(lblSexoCliente);
-        lblSexoCliente.setBounds(290, 20, 147, 30);
+        lblSexoCliente.setBounds(290, 20, 103, 30);
 
         setSize(new java.awt.Dimension(929, 425));
         setLocationRelativeTo(null);
@@ -161,7 +161,7 @@ public class TelaRelatorios extends javax.swing.JFrame {
             ResultSet resultado;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "admin");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "09041448abner");
             //Verifica o conteúdo do comboBox de tipo de relatório
             if (tipoRelatorio.equalsIgnoreCase("Geral")) {
                 st = conexao.prepareStatement("SELECT * FROM tb_cliente");

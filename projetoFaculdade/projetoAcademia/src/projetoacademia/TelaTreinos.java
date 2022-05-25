@@ -39,7 +39,7 @@ public class TelaTreinos extends javax.swing.JFrame {
         jmnTreinoB = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela de Treinos");
         getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);

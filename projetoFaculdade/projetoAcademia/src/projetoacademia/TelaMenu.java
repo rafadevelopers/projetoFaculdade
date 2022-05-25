@@ -81,7 +81,7 @@ public class TelaMenu extends javax.swing.JFrame {
         btnExcluir = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
         pnlCadastrarCliente = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblDadosCadastrais = new javax.swing.JLabel();
         txtDtNascimentoCliente = new javax.swing.JTextField();
         txtEmailCliente = new javax.swing.JTextField();
         txtNomeCompletoCliente = new javax.swing.JTextField();
@@ -96,6 +96,7 @@ public class TelaMenu extends javax.swing.JFrame {
         btnBuscarCliente = new javax.swing.JButton();
         btnExcluirCliente = new javax.swing.JButton();
         btnAlterarCliente = new javax.swing.JButton();
+        lblImagem = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmnFuncionarios = new javax.swing.JMenu();
         jmnCadastrarFuncionarios = new javax.swing.JMenuItem();
@@ -189,7 +190,7 @@ public class TelaMenu extends javax.swing.JFrame {
 
         lblSaudacao.setText("jLabel2");
         pnlCadastrarUsuario.add(lblSaudacao);
-        lblSaudacao.setBounds(460, 310, 130, 18);
+        lblSaudacao.setBounds(460, 310, 130, 13);
 
         cbmCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente" }));
         pnlCadastrarUsuario.add(cbmCliente);
@@ -227,9 +228,9 @@ public class TelaMenu extends javax.swing.JFrame {
 
         pnlCadastrarCliente.setLayout(null);
 
-        jLabel2.setText("Dados Cadastrais");
-        pnlCadastrarCliente.add(jLabel2);
-        jLabel2.setBounds(230, 20, 120, 20);
+        lblDadosCadastrais.setText("Dados Cadastrais");
+        pnlCadastrarCliente.add(lblDadosCadastrais);
+        lblDadosCadastrais.setBounds(230, 20, 120, 20);
 
         txtDtNascimentoCliente.setText("Data de nascimento");
         txtDtNascimentoCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +280,7 @@ public class TelaMenu extends javax.swing.JFrame {
 
         lblSaudacao1.setText("jLabel2");
         pnlCadastrarCliente.add(lblSaudacao1);
-        lblSaudacao1.setBounds(460, 310, 130, 18);
+        lblSaudacao1.setBounds(460, 310, 130, 13);
 
         cbmCliente1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente" }));
         pnlCadastrarCliente.add(cbmCliente1);
@@ -314,6 +315,11 @@ public class TelaMenu extends javax.swing.JFrame {
 
         getContentPane().add(pnlCadastrarCliente);
         pnlCadastrarCliente.setBounds(0, 0, 620, 360);
+
+        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/academia 2.jpg"))); // NOI18N
+        lblImagem.setText("jLabel3");
+        getContentPane().add(lblImagem);
+        lblImagem.setBounds(0, -7, 620, 370);
 
         jmnFuncionarios.setText("Funcionarios");
 
@@ -394,7 +400,7 @@ public class TelaMenu extends javax.swing.JFrame {
             Connection conexao;
             PreparedStatement st;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "admin");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "09041448abner");
             if (pswSenha.getText().equals(pswRepitaSenha.getText())) {
                 st = conexao.prepareStatement("INSERT INTO tb_usuario VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
@@ -461,7 +467,7 @@ if (txtCPF.getText().equals("")) {
             
             //Conexão com o BD
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "admin");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "09041448abner");
             //Busca o produto na tabela produtos do BD
             st = conexao.prepareStatement("SELECT * FROM tb_usuario WHERE cpf=?");
             st.setString(1, txtCPF.getText());
@@ -599,9 +605,8 @@ try {
             Connection conexao;
             PreparedStatement st;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/ban"
-                    + ""
-                    + "coacademia", "root", "admin");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "09041448abner");
+                  
                 st = conexao.prepareStatement("INSERT INTO tb_cliente VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
                 st.setString(1, txtNomeCompletoCliente.getText());
                 st.setString(2, txtDtNascimentoCliente.getText());
@@ -794,7 +799,6 @@ try {
     private javax.swing.JComboBox<String> cmbTipoPlanoCliente;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -810,6 +814,8 @@ try {
     private javax.swing.JMenu jmnFuncionarios;
     private javax.swing.JMenu jmnTreinos;
     private javax.swing.JMenuItem jmnTreinosTipos;
+    private javax.swing.JLabel lblDadosCadastrais;
+    private javax.swing.JLabel lblImagem;
     private javax.swing.JLabel lblSaudacao;
     private javax.swing.JLabel lblSaudacao1;
     private javax.swing.JPanel pnlCadastrarCliente;

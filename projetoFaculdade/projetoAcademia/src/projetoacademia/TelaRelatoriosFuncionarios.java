@@ -53,7 +53,7 @@ public class TelaRelatoriosFuncionarios extends javax.swing.JFrame {
         lblNomeCliente = new javax.swing.JLabel();
         lblSexoCliente = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela de Relatorios");
         getContentPane().setLayout(null);
 
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -73,7 +73,7 @@ public class TelaRelatoriosFuncionarios extends javax.swing.JFrame {
         getContentPane().add(lblTipoRelatorio);
         lblTipoRelatorio.setBounds(10, 10, 110, 50);
 
-        cmbTipoRelatorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Geral", "Por sexo", "Por Nome", "Por Cargo", " " }));
+        cmbTipoRelatorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Geral", "Por sexo", "Por Nome", "Por Cargo" }));
         cmbTipoRelatorio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cmbTipoRelatorio.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -92,7 +92,7 @@ public class TelaRelatoriosFuncionarios extends javax.swing.JFrame {
 
         lblPlanoCliente.setText("Digite o cargo desejado");
         getContentPane().add(lblPlanoCliente);
-        lblPlanoCliente.setBounds(290, 0, 160, 30);
+        lblPlanoCliente.setBounds(280, 20, 160, 30);
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,11 +105,11 @@ public class TelaRelatoriosFuncionarios extends javax.swing.JFrame {
 
         lblNomeCliente.setText("Nome do cliente");
         getContentPane().add(lblNomeCliente);
-        lblNomeCliente.setBounds(310, 40, 120, 30);
+        lblNomeCliente.setBounds(300, 20, 120, 30);
 
         lblSexoCliente.setText("Digite o sexo desejado");
         getContentPane().add(lblSexoCliente);
-        lblSexoCliente.setBounds(290, 20, 147, 30);
+        lblSexoCliente.setBounds(290, 20, 103, 30);
 
         setSize(new java.awt.Dimension(851, 444));
         setLocationRelativeTo(null);
@@ -163,7 +163,7 @@ public class TelaRelatoriosFuncionarios extends javax.swing.JFrame {
             ResultSet resultado;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "admin");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "09041448abner");
             //Verifica o conteúdo do comboBox de tipo de relatório
             if (tipoRelatorio.equalsIgnoreCase("Geral")) {
                 st = conexao.prepareStatement("SELECT * FROM tb_usuario");

@@ -40,6 +40,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela de Login");
         getContentPane().setLayout(null);
 
         jLabel1.setText("Faça Login ");
@@ -98,7 +99,7 @@ public class TelaLogin extends javax.swing.JFrame {
             ResultSet resultado;
             //Conexão com o BD
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "admin");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/bancoacademia", "root", "09041448abner");
             //Busca o usuário na tabela do BD
             st = conexao.prepareStatement("SELECT * FROM tb_usuario WHERE usuario=? AND senha=?");
             st.setString(1, txtUsuario.getText());
